@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
         spender = '0x57A56BEaD1D0B65Ab5E3AcF528ECced8FbEb9378'; // Spender for Polygon
         req.query.param = 'production';
     } else if (network === 'polygon_testnet') {
-        spender = '0x15c9861200cC0E7133E312f016bA6f6db045C83a'; // Spender for Polygon Testnet
+        spender = '0x4d7828dd7961bc613740b56b3bcbebbc330dac51'; // Spender for Polygon Testnet
         req.query.param = 'staging';
     }
 
@@ -24,7 +24,7 @@ module.exports = async (req, res) => {
         avalanche_testnet: { usdc: '0x5425890298aed601595a70AB815c96711a31Bc65' },
         linea_testnet: { weth: '0x2C1b868d6596a18e32E61B901E4060C872647b6C' },
         bnb_testnet: { busd: '0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee' },
-        polygon_testnet: { usdc: '0xE097d6B3100777DC31B34dC2c58fB524C2e76921' }
+        polygon_testnet: { usdt: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F' }
     };
 
 
@@ -52,7 +52,7 @@ module.exports = async (req, res) => {
             rpcUrl = 'https://bsc-testnet.drpc.org/';
             break;
         case 'polygon_testnet':
-            rpcUrl = 'https://rpc.ankr.com/polygon_mumbai';
+            rpcUrl = 'https://polygon-rpc.com';
             break;
         default:
             return res.status(400).json({ error: 'Unsupported network' });
